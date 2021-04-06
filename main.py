@@ -63,8 +63,10 @@ class AntColony(object):
 
     def gen_all_paths(self):
         all_paths = []
+        #random start path
+        random_start = np.random.randint(0, len(self.distances))
         for i in range(self.n_ants):
-            path = self.gen_path(0)
+            path = self.gen_path(random_start)
             all_paths.append((path, self.gen_path_dist(path)))
         return all_paths
 
